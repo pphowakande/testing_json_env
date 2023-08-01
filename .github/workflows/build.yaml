@@ -25,5 +25,4 @@ jobs:
 
     - name: Compile code and run tests
       run: |
-        make unit-test
-        make build
+        make test
