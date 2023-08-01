@@ -1,9 +1,11 @@
+// integers_test.go
 package main
 
 import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"testing"
 )
 
 type GCSCreds struct {
@@ -20,15 +22,19 @@ type GCSCreds struct {
 	UniverseDomain  string `json:"universe_domain"`
 }
 
-func testfunc() bool {
+func TestMultiply(t *testing.T) {
+	got := Multiply(2, 3)
+	want := 6
+
+	if want != got {
+		t.Errorf("Expected '%d', but got '%d'", want, got)
+	}
+
+	fmt.Println("Inside tests")
 	creds := os.Getenv("GCP_KEY")
 	fmt.Println("creds : ", creds)
 	data := GCSCreds{}
 	err := json.Unmarshal([]byte(creds), &data)
-	if err != nil {
-		return false
-	}
 	fmt.Println("err : ", err)
 	fmt.Println("data : ", data)
-	return true
 }
