@@ -9,6 +9,7 @@ defaults:
 env:
   GOPATH: /home/runner/work/testing_json_env/testing_json_env/go
   GOPRIVATE: github.com/*
+  GCP_KEY: ${{ secrets.GCP_KEY }}
 jobs:
   run-unit-test:
     runs-on: ubuntu-latest
