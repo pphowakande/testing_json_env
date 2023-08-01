@@ -30,6 +30,9 @@ func TestMultiply(t *testing.T) {
 		t.Errorf("Expected '%d', but got '%d'", want, got)
 	}
 
+	str := os.Getenv("STRING_TEST")
+	fmt.Println("str : ", str)
+
 	fmt.Println("Inside tests")
 	creds := os.Getenv("GCP_KEY")
 	fmt.Println("creds : ", creds)
