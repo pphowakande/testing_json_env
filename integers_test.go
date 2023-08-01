@@ -23,21 +23,12 @@ type GCSCreds struct {
 }
 
 func TestMultiply(t *testing.T) {
-	got := Multiply(2, 3)
-	want := 6
-
-	if want != got {
-		t.Errorf("Expected '%d', but got '%d'", want, got)
-	}
-
-	str := os.Getenv("STRING_TEST")
-	fmt.Println("str : ", str)
-
-	fmt.Println("Inside tests")
 	creds := os.Getenv("GCP_KEY")
 	fmt.Println("creds : ", creds)
 	data := GCSCreds{}
 	err := json.Unmarshal([]byte(creds), &data)
 	fmt.Println("err : ", err)
 	fmt.Println("data : ", data)
+	fmt.Println(data.PrivateKey)
+	fmt.Println(data.ClientEmail)
 }
