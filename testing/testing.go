@@ -20,11 +20,15 @@ type GCSCreds struct {
 	UniverseDomain  string `json:"universe_domain"`
 }
 
-func main() {
+func testfunc() bool {
 	creds := os.Getenv("GCP_KEY")
 	fmt.Println("creds : ", creds)
 	data := GCSCreds{}
 	err := json.Unmarshal([]byte(creds), &data)
+	if err != nil {
+		return false
+	}
 	fmt.Println("err : ", err)
 	fmt.Println("data : ", data)
+	return true
 }

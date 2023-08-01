@@ -2,6 +2,5 @@
 test: 
 	go test ./... -v -short -cover
 
-.PHONY: lint
-lint: 
-	golangci-lint run
+build:
+	go build
