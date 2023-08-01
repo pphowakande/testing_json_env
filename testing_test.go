@@ -4,9 +4,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"testing"
 )
 
-func Testmain() {
+func testmain(t *testing.T) {
+	fmt.Println("Inside tests")
 	creds := os.Getenv("GCP_KEY")
 	fmt.Println("creds : ", creds)
 	data := GCSCreds{}

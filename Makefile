@@ -1,6 +1,6 @@
 .PHONY: test
 test: 
-	gotestdox -short -count=1 ./...
+	go test ./... -v -short -cover
 
 .PHONY: lint
 lint: 
